@@ -1,7 +1,7 @@
 #include <studio.h>
 #include <stidlb.h>
 #include <string.h>
-#icnlude <time.h>
+#include <time.h>
 
 #define MAX_MACHINES 100
 
