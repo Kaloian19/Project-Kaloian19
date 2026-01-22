@@ -1,4 +1,4 @@
-#include <studio.h>
+#include <stdio.h>
 #include <stidlb.h>
 #include <string.h>
 #include <time.h>
@@ -16,7 +16,7 @@ typedef struct {
 Machine machines[MAX_MACHINES];
 int machine_count = 0;
 
-void add machine() {
+void add_machine() {
    if (machine_count >= MAX_MACHINE){
        printf("Maximum number of machines reached.\n");
        return;
@@ -24,21 +24,21 @@ void add machine() {
    
    Machine new_machine;
    printf("Enter machine's name: ");
-   scanf("%s", new_machnie.name);
+   scanf("%s", new_machine.name);
    
    // Enter the last maintenance data
    printf("Enter year of last maintenance (yyyy): ");
    int year, month, day;
    scanf("%d-%d-%d", &year, &month, &day);
    new_machine.last_maintenance.tm_year = year - 1900;
-   new_machine.last_maintenance.tm_month = month -1;
+   new_machine.last_maintenance.tm_mon = month -1;
    new_machine.last_maintenance.tm_day = day;
    
    // Enter maintenance interval (in days) 
    printf("Enter maintenance interval in days ");
    scanf("%d",&new_maintenance_interval);
 
-   machines[machine_count+++] = new_machine;
+   machines[machine_count++] = new_machine;
    printf("The machine is added successfully);
 }
 
@@ -61,7 +61,7 @@ void show_maintenance_schedule(){
 
 // Fuction for saving data to a file
 void save_data(const char *filename) {
-    FILE *file = fopen(fileman, "w");
+    FILE *file = fopen(filename, "w");
     if (file == NULL) {
         printf("Error opening file.\n");
         return;
@@ -127,7 +127,7 @@ int main() {
                 printf("Data saved successfully.\n");
                 break;
             case 4:
-                save data(filename); // Record data on exit
+                save_data(filename); // Record data on exit
                 printf("Exit the program.\n");
                 return 0;
             default:
